@@ -1,0 +1,5 @@
+com\ngc\web\init\ApplicationInitializer.class
+com\ngc\web\config\WebMvcConfig.class
+com\ngc\web\controller\NGCWebController.class
+com\ngc\web\bos\Login.class
+com\ngc\web\config\RootConfigContext.class
