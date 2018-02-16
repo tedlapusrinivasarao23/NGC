@@ -33,11 +33,33 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="<c:url value='assets/img/favicon.ico' />" type="image/x-icon">
         <link rel="apple-touch-icon" href="<c:url value='assets/img/apple-touch-icon.png' />" >
+        
+          <script type="text/javascript">
+        function myFun() {
+        	var x = document.getElementById("menuLeft");
+        	x.style.display = "none";
+        	document.getElementById("arrowMain").className="s-header__trigger js__trigger";
+        	location.reload();
+		}
+        
+        function myFun1() {
+        	var x = document.getElementById("menuLeft");
+        	var y = document.getElementById("arrowMain");
+        	if(y.className=="s-header__trigger js__trigger"){
+        	x.style.display = "block";
+        	document.getElementById("arrowMain").className="s-header__trigger js__trigger -is-active";
+        	}else {
+        		x.style.display = "none";
+        	document.getElementById("arrowMain").className="s-header__trigger js__trigger";
+        	}
+		}
+        </script>
+        
     </head>
     <!-- End Head -->
 
     <!-- Body -->
-    <body>
+    <body id="bodyPage">
 
         <!--========== HEADER ==========-->
         <header class="navbar-fixed-top s-header js__header-sticky js__header-overlay">
@@ -48,16 +70,18 @@
                         <div class="s-header__navbar-row-col">
                             <!-- Logo -->
                             <div class="s-header__logo">
-                                <a href="index.html" class="s-header__logo-link">
-                                    <img class="s-header__logo-img s-header__logo-img-default" src="<c:url value='assets/img/logo.png' />" alt="Megakit Logo">
-                                    <img class="s-header__logo-img s-header__logo-img-shrink" src="<c:url value='assets/img/logo-dark.png' />" alt="Megakit Logo">
+                                <a href="#bodyPage" class="s-header__logo-link">
+                                    <%-- <img class="s-header__logo-img s-header__logo-img-default" src="<c:url value='assets/img/logo.png' />" alt="Megakit Logo">
+                                    <img class="s-header__logo-img s-header__logo-img-shrink" src="<c:url value='assets/img/logo-dark.png' />" alt="Megakit Logo"> --%>
+                                    <a href="#" class="s-header__logo-img s-header__logo-img-default"><b style="font-size: large;">NEAR GEO CONTACTS</b></a>
+                                     <a href="#" class="s-header__logo-img s-header__logo-img-shrink">NEAR GEO CONTACTS</a>
                                 </a>
                             </div>
                             <!-- End Logo -->
                         </div>
-                        <div class="s-header__navbar-row-col">
+                        <div class="s-header__navbar-row-col" id="arrow">
                             <!-- Trigger -->
-                            <a href="javascript:void(0);" class="s-header__trigger js__trigger">
+                            <a href="javascript:void(0);" class="s-header__trigger js__trigger" id="arrowMain">
                                 <span class="s-header__trigger-icon"></span>
                                 <svg x="0rem" y="0rem" width="3.125rem" height="3.125rem" viewbox="0 0 54 54">
                                     <circle fill="transparent" stroke="#fff" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
@@ -71,7 +95,7 @@
             <!-- End Navbar -->
 
             <!-- Overlay -->
-            <div class="s-header-bg-overlay js__bg-overlay">
+            <div class="s-header-bg-overlay js__bg-overlay" id="menuLeft">
                 <!-- Nav -->
                 <nav class="s-header__nav js__scrollbar">
                     <div class="container-fluid">
@@ -89,13 +113,13 @@
 
                         <!-- Menu List -->                                
                         <ul class="list-unstyled s-header__nav-menu" style="height: 347px;">
-                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="${pageContext.request.contextPath}/#about">About</a></li>
-                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#">Team</a></li>
-                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#">Services</a></li>
-                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#">Events</a></li>
-                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#">FAQ</a></li>
-                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#">Contacts</a></li>
-                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="${pageContext.request.contextPath}/#adminLogin">Admin Login</a></li>
+                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#about" onclick="myFun();" id="aboutLink">About</a></li>
+                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#projects" onclick="myFun();" id="projectsLink">Projects</a></li>
+                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#team" onclick="myFun();" id="teamLink">Team</a></li>
+                             <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#contacts" onclick="myFun();" id="contactsLink">Contacts Us</a></li>
+                             <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#feedback" onclick="myFun();" id="feedbackLink">FeedBack</a></li>
+                     <!--    <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#events" onclick="myFun();" id="eventsLink">Events</a></li> -->
+                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#adminLogin" onclick="myFun();" id="adminLoginLink">Admin Login</a></li>
                         </ul>
                         <!-- End Menu List -->
                     </div>
@@ -175,7 +199,7 @@
 
         <!--========== PAGE CONTENT ==========-->
         <!-- Features -->
-        <div id="js__scroll-to-section" name="about"  class="container g-padding-y-80--xs g-padding-y-125--sm">
+        <div id="js__scroll-to-section" name="about"  class="container g-padding-y-80--xs g-padding-y-125--sm" >
             <div class="g-text-center--xs g-margin-b-100--xs">
                 <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">Welcome to NGC</p>
                 <h2 class="g-font-size-32--xs g-font-size-36--md">We Create Beautiful Experiences <br> That Drive Successful Businesses.</h2>
@@ -279,7 +303,7 @@
         <!-- End Parallax -->
 
         <!-- Culture -->
-        <div class="g-promo-section">
+        <div class="g-promo-section" id="about">
             <div class="container g-padding-y-80--xs g-padding-y-125--sm">
                 <div class="row">
                     <div class="col-md-4 g-margin-t-15--xs g-margin-b-60--xs g-margin-b-0--lg">
@@ -303,7 +327,7 @@
         <!-- End Culture -->
 
         <!-- Subscribe -->
-        <div class="js__parallax-window" style="background: url(<c:url value='assets/img/1920x1080/07.jpg' />) 50% 0 no-repeat fixed;">
+        <div class="js__parallax-window" style="background: url(<c:url value='assets/img/1920x1080/07.jpg' />) 50% 0 no-repeat fixed;" >
             <div class="g-container--sm g-text-center--xs g-padding-y-80--xs g-padding-y-125--sm">
                 <div class="g-margin-b-80--xs">
                     <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--white-opacity g-letter-spacing--2 g-margin-b-25--xs">Subscribe</p>
@@ -324,7 +348,7 @@
         <!-- End Subscribe -->
 
         <!-- Portfolio Filter -->
-        <div class="container g-padding-y-80--xs">
+        <div class="container g-padding-y-80--xs" id="projects">
             <div class="g-text-center--xs g-margin-b-40--xs">
                 <h2 class="g-font-size-32--xs g-font-size-36--md">Projects</h2>
             </div>
@@ -340,7 +364,7 @@
         <!-- End Portfolio Filter -->
 
         <!-- Portfolio Gallery -->
-        <div class="container g-margin-b-100--xs">
+        <div class="container g-margin-b-100--xs" >
             <div id="js__grid-portfolio-gallery" class="cbp">
                 <!-- Item -->
                 <div class="s-portfolio__item cbp-item logos motion">
@@ -493,7 +517,7 @@
         <!-- End Portfolio -->
 
         <!-- Testimonials -->
-        <div class="js__parallax-window" style="background: url(<c:url value='assets/img/1920x1080/04.jpg' /> ) 50% 0 no-repeat fixed;">
+        <div class="js__parallax-window" style="background: url(<c:url value='assets/img/1920x1080/04.jpg' /> ) 50% 0 no-repeat fixed;" id="team">
             <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-125--sm">
                 <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--white-opacity g-letter-spacing--2 g-margin-b-50--xs">Testimonials</p>
                 <div class="s-swiper js__swiper-testimonials">
@@ -671,7 +695,7 @@
         End Counter
  -->
  
-   <div class="g-position--relative g-bg-color--primary">
+   <div class="g-position--relative g-bg-color--primary" id="contacts">
             <div class="g-container--md g-padding-y-125--xs">
                 <div class="g-text-center--xs g-margin-t-50--xs g-margin-b-80--xs">
                     <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--white-opacity g-letter-spacing--2 g-margin-b-25--xs">Contact Us</p>
@@ -709,7 +733,7 @@
  
  
         <!-- Feedback Form -->
-        <div class="g-bg-color--sky-light">
+        <div class="g-bg-color--sky-light" id="feedback">
             <div class="container g-padding-y-80--xs g-padding-y-125--sm">
                 <div class="g-text-center--xs g-margin-b-80--xs">
                     <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">Feedback</p>
@@ -786,7 +810,7 @@
               
              <!--========== PROMO BLOCK ==========-->
               <!-- Feedback Form -->
-        <div class="g-bg-color--primary" id="adminLogin" name="adminLogin">
+        <div class="g-bg-color--primary" id="adminLogin">
             <div class="container g-padding-y-80--xs g-padding-y-125--sm">
                      
                   <form class="center-block g-width-350--xs g-bg-color--white-opacity-lightest g-box-shadow__blueviolet-v1 g-padding-x-40--xs g-padding-y-60--xs g-radius--4">
