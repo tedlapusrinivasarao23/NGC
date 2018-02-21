@@ -119,7 +119,7 @@
                              <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#contacts" onclick="myFun();" id="contactsLink">Contacts Us</a></li>
                              <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#feedback" onclick="myFun();" id="feedbackLink">FeedBack</a></li>
                      <!--    <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#events" onclick="myFun();" id="eventsLink">Events</a></li> -->
-                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="#adminLogin" onclick="myFun();" id="adminLoginLink">Admin Login</a></li>
+                            <li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="${pageContext.request.contextPath}/ngc/adminLogin.htm" onclick="myFun();" id="adminLoginLink">Admin Login</a></li>
                         </ul>
                         <!-- End Menu List -->
                     </div>
@@ -426,7 +426,7 @@
                         </div>
                         <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
                             <li>
-                                <a href="img/970x647/07.jpg" class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle" data-title="Portfolio Item <br/> by KeenThemes Inc.">
+                                <a href="<c:url value='assets/img/970x647/07.jpg' />" class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle" data-title="Portfolio Item <br/> by KeenThemes Inc.">
                                     <i class="ti-fullscreen"></i>
                                 </a>
                             </li>
@@ -808,8 +808,8 @@
             <!-- End Links -->
             
               
-             <!--========== PROMO BLOCK ==========-->
-              <!-- Feedback Form -->
+           <!--   
+              Feedback Form
         <div class="g-bg-color--primary" id="adminLogin">
             <div class="container g-padding-y-80--xs g-padding-y-125--sm">
                      
@@ -829,7 +829,7 @@
                                 </div>
                             </form>
             </div>
-        </div>
+        </div> -->
         <!-- <div class="s-promo-block-v1 g-bg-color--primary-to-blueviolet-ltr g-fullheight--md">
             <div class="container g-ver-center--md g-padding-y-100--xs">
                 <div class="row g-hor-centered-row--md g-margin-t-30--xs g-margin-t-20--sm">
